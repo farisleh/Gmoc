@@ -33,6 +33,9 @@ namespace Gmoc
             button5.Enabled = false;
             button6.Enabled = false;
             button7.Enabled = false;
+            button8.Enabled = false;
+            button9.Enabled = false;
+            button10.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,6 +47,9 @@ namespace Gmoc
             button5.Enabled = true;
             button6.Enabled = true;
             button7.Enabled = true;
+            button8.Enabled = true;
+            button9.Enabled = true;
+            button10.Enabled = true;
             try
             {
                 serialPort1.PortName = comboBox1.Text;
@@ -67,6 +73,9 @@ namespace Gmoc
             button5.Enabled = false;
             button6.Enabled = false;
             button7.Enabled = false;
+            button8.Enabled = false;
+            button9.Enabled = false;
+            button10.Enabled = false;
             textBox2.Clear();
             try
             {
@@ -180,6 +189,57 @@ namespace Gmoc
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.WriteLine("$00SET,W,AC,02,300!XYZ321*CS#" + Environment.NewLine);
+                    serialPort1.WriteLine("" + Environment.NewLine);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.WriteLine("$00SET,W,RP,01,60!XYZ321*CS#" + Environment.NewLine);
+                    serialPort1.WriteLine("" + Environment.NewLine);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.WriteLine("$00SET,W,RP,02,300!XYZ321*CS#" + Environment.NewLine);
+                    serialPort1.WriteLine("" + Environment.NewLine);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }
