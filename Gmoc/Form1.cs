@@ -80,7 +80,7 @@ namespace Gmoc
             {
                 if (serialPort1.IsOpen)
                 {
-                    serialPort1.WriteLine("$00SET,W,IP,01,gtech.dyndns-ip.com!8GTEC8*CS#" + Environment.NewLine);
+                    serialPort1.WriteLine("$00SET,W,IP,01,gtechserver.ddns.net!8GTEC8*CS#" + Environment.NewLine);
                     serialPort1.WriteLine("" + Environment.NewLine);
                     Thread.Sleep(50);
                     serialPort1.WriteLine("$00SET,W,IP,02,9000!8GTEC8*CS#" + Environment.NewLine);
